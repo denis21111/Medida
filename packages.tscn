@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dl05cfb8afgbn"]
+
+[ext_resource type="Script" uid="uid://cgypopultxxh3" path="res://packages.gd" id="1_2k8ed"]
+[ext_resource type="Texture2D" uid="uid://dasun8fl6ra6l" path="res://package.png" id="2_rn8mf"]
+
+[node name="Packages" type="Area2D" unique_id=31122542]
+script = ExtResource("1_2k8ed")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1703066972]
+position = Vector2(50, 49.5)
+scale = Vector2(0.019535067, 0.021451788)
+texture = ExtResource("2_rn8mf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=644080331]
+position = Vector2(0.3275509, 0.08189583)
+scale = Vector2(0.9974489, 0.99935573)
+polygon = PackedVector2Array(54, 1, 1, 19, 1, 76, 47, 98, 99, 78, 99, 21)
+
+[node name="Label" type="Label" parent="." unique_id=1504593076]
+offset_left = 45.0
+offset_top = 46.0
+offset_right = 85.0
+offset_bottom = 69.0
+text = "?"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
