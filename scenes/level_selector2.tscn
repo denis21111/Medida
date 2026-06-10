@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://3iq1lt2pbv1n"]
+
+[ext_resource type="Script" uid="uid://bl60odfriafe4" path="res://level_selector_2.gd" id="1_ew38w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xyw6"]
+bg_color = Color(0.84795177, 0.4127719, 0.770449, 1)
+
+[node name="Control" type="Control" unique_id=240425022]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_ew38w")
+
+[node name="escape" type="Button" parent="." unique_id=620355465]
+layout_mode = 1
+offset_right = 150.0
+offset_bottom = 150.0
+
+[node name="HBoxContainer" type="VSplitContainer" parent="." unique_id=1837698690]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -400.0
+offset_right = 250.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+split_offsets = PackedInt32Array(-70)
+split_offset = -70
+
+[node name="tutorial1" type="Button" parent="HBoxContainer" unique_id=219090966]
+layout_mode = 2
+size_flags_vertical = 3
+text = "tutorial3"
+
+[node name="VSplitContainer" type="VSplitContainer" parent="HBoxContainer" unique_id=598496627]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VSplitContainer" unique_id=2075564446]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer" unique_id=1243705293]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "level31"
+
+[node name="Button2" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer" unique_id=1824855320]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "level32"
+
+[node name="Button3" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer" unique_id=2054664835]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "level33"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VSplitContainer" unique_id=1133998157]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer2" unique_id=1243418578]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_5xyw6")
+text = "level34"
+
+[node name="Button2" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer2" unique_id=1620678814]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "level35"
+
+[node name="Button3" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer2" unique_id=1659114597]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "level36"
+
+[connection signal="pressed" from="escape" to="." method="_on_escape_pressed"]

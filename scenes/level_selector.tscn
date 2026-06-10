@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dmwln7ebw37ab"]
+
+[ext_resource type="Script" uid="uid://gjtg1j70vhvs" path="res://level_selector.gd" id="1_lc76m"]
+
+[node name="Control" type="Control" unique_id=240425022]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_lc76m")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="." unique_id=1614385476]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -600.0
+offset_top = -300.0
+offset_right = 600.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="HBoxContainer4" type="VSplitContainer" parent="HBoxContainer4" unique_id=229325694]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+split_offsets = PackedInt32Array(-70)
+split_offset = -70
+
+[node name="tutorial1" type="Button" parent="HBoxContainer4/HBoxContainer4" unique_id=1232156991]
+layout_mode = 2
+size_flags_vertical = 3
+text = "tutorial1"
+
+[node name="HBoxContainer5" type="VSplitContainer" parent="HBoxContainer4" unique_id=142645449]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+split_offsets = PackedInt32Array(-70)
+split_offset = -70
+
+[node name="tutorial2" type="Button" parent="HBoxContainer4/HBoxContainer5" unique_id=1798852995]
+layout_mode = 2
+size_flags_vertical = 3
+text = "tutorial1"
+
+[node name="HBoxContainer2" type="VSplitContainer" parent="HBoxContainer4" unique_id=584719221]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+split_offsets = PackedInt32Array(-70)
+split_offset = -70
+
+[node name="tutorial3" type="Button" parent="HBoxContainer4/HBoxContainer2" unique_id=712590125]
+layout_mode = 2
+size_flags_vertical = 3
+text = "tutorial2"
+
+[node name="escape" type="Button" parent="." unique_id=620355465]
+layout_mode = 1
+offset_right = 150.0
+offset_bottom = 150.0
+
+[connection signal="pressed" from="HBoxContainer4/HBoxContainer4/tutorial1" to="." method="_on_tutorial_1_pressed"]
+[connection signal="pressed" from="HBoxContainer4/HBoxContainer5/tutorial2" to="." method="_on_tutorial_2_pressed"]
+[connection signal="pressed" from="HBoxContainer4/HBoxContainer2/tutorial3" to="." method="_on_tutorial_3_pressed"]
+[connection signal="pressed" from="escape" to="." method="_on_escape_pressed"]
