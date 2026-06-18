@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://cawg2h752lccy"]
+
+[ext_resource type="Texture2D" uid="uid://b5na46nepj4oy" path="res://pics/Background.png" id="1_epypp"]
+[ext_resource type="Texture2D" uid="uid://bfdfbn328nrqk" path="res://pics/ProductionLine.png" id="2_0hol4"]
+[ext_resource type="Texture2D" uid="uid://btswnc7l7ood8" path="res://pics/Package.png" id="3_q6r6c"]
+
+[node name="Scene" type="Node2D" unique_id=1445353325]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1537277486]
+position = Vector2(960, 272)
+scale = Vector2(1.2481284, 0.5373535)
+texture = ExtResource("1_epypp")
+flip_v = true
+
+[node name="ProductionLine2" type="Sprite2D" parent="Background" unique_id=1007842253]
+position = Vector2(19, -193)
+rotation = 3.1415927
+scale = Vector2(1.001, 1.63)
+texture = ExtResource("2_0hol4")
+
+[node name="Package 1" type="Sprite2D" parent="Background/ProductionLine2" unique_id=1989847128]
+position = Vector2(-532, -52)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 2" type="Sprite2D" parent="Background/ProductionLine2" unique_id=1929398103]
+position = Vector2(-407, -62)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 3" type="Sprite2D" parent="Background/ProductionLine2" unique_id=471001050]
+position = Vector2(96, -57.99997)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 4" type="Sprite2D" parent="Background/ProductionLine2" unique_id=747378521]
+position = Vector2(-37, -46)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 5" type="Sprite2D" parent="Background/ProductionLine2" unique_id=440634655]
+position = Vector2(-160, -57.99997)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 6" type="Sprite2D" parent="Background/ProductionLine2" unique_id=954887024]
+position = Vector2(-285, -48)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 7" type="Sprite2D" parent="Background/ProductionLine2" unique_id=873789681]
+position = Vector2(473, -51)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 8" type="Sprite2D" parent="Background/ProductionLine2" unique_id=183329912]
+position = Vector2(345, -53)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 9" type="Sprite2D" parent="Background/ProductionLine2" unique_id=2047549471]
+position = Vector2(222, -53)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Background 2" type="Sprite2D" parent="." unique_id=2033055473]
+position = Vector2(960, 804.00006)
+scale = Vector2(1.247, 0.54)
+texture = ExtResource("1_epypp")
+
+[node name="ProductionLine2" type="Sprite2D" parent="Background 2" unique_id=794228578]
+position = Vector2(19, 193)
+scale = Vector2(1.001, 1.63)
+texture = ExtResource("2_0hol4")
+
+[node name="Package 1" type="Sprite2D" parent="Background 2/ProductionLine2" unique_id=133278521]
+position = Vector2(-532, -52)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 2" type="Sprite2D" parent="Background 2/ProductionLine2" unique_id=486654283]
+position = Vector2(-407, -62)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 3" type="Sprite2D" parent="Background 2/ProductionLine2" unique_id=656836824]
+position = Vector2(96, -57.99997)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 4" type="Sprite2D" parent="Background 2/ProductionLine2" unique_id=199246852]
+position = Vector2(-37, -46)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 5" type="Sprite2D" parent="Background 2/ProductionLine2" unique_id=757100433]
+position = Vector2(-160, -57.99997)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 6" type="Sprite2D" parent="Background 2/ProductionLine2" unique_id=577494459]
+position = Vector2(-285, -48)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 7" type="Sprite2D" parent="Background 2/ProductionLine2" unique_id=712546594]
+position = Vector2(473, -51)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 8" type="Sprite2D" parent="Background 2/ProductionLine2" unique_id=26791574]
+position = Vector2(345, -53)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
+
+[node name="Package 9" type="Sprite2D" parent="Background 2/ProductionLine2" unique_id=918450106]
+position = Vector2(222, -53)
+scale = Vector2(0.124755844, 0.113281265)
+texture = ExtResource("3_q6r6c")
