@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5m113wve8vyl"]
 
-[ext_resource type="Script" uid="uid://b0lfmoc6e4xwq" path="res://scripts/game.gd" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://cpg5unsoxmdc1" path="res://scripts/GameManager.gd" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://c53bbt3wjua7d" path="res://scenes/conveyor_belt.tscn" id="2_lnu2h"]
 
 [node name="Game" type="Control" unique_id=665196175]

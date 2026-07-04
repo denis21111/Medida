@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dl05cfb8afgbn"]
 
-[ext_resource type="Script" uid="uid://cgypopultxxh3" path="res://packages.gd" id="1_2k8ed"]
-[ext_resource type="Texture2D" uid="uid://dasun8fl6ra6l" path="res://package.png" id="2_rn8mf"]
+[ext_resource type="Script" uid="uid://xsu4gfadrmek" path="res://scripts/packages.gd" id="1_2k8ed"]
+[ext_resource type="Texture2D" uid="uid://btswnc7l7ood8" path="res://pics/Package.png" id="2_rn8mf"]
+
 
 [node name="Packages" type="Area2D" unique_id=31122542]
 script = ExtResource("1_2k8ed")
