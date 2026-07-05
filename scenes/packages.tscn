@@ -1,16 +1,15 @@
 [gd_scene format=3 uid="uid://dl05cfb8afgbn"]
 
-[ext_resource type="Script" uid="uid://xsu4gfadrmek" path="res://scripts/packages.gd" id="1_2k8ed"]
-[ext_resource type="Texture2D" uid="uid://btswnc7l7ood8" path="res://pics/Package.png" id="2_rn8mf"]
-
+[ext_resource type="Script" uid="uid://dfwrvrveu0jm3" path="res://scripts/packages.gd" id="1_7n7sm"]
+[ext_resource type="Texture2D" uid="uid://btswnc7l7ood8" path="res://pics/Package.png" id="1_p5emx"]
 
 [node name="Packages" type="Area2D" unique_id=31122542]
-script = ExtResource("1_2k8ed")
+script = ExtResource("1_7n7sm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1703066972]
-position = Vector2(50, 49.5)
-scale = Vector2(0.019535067, 0.021451788)
-texture = ExtResource("2_rn8mf")
+position = Vector2(49, 44)
+scale = Vector2(0.12565199, 0.1921305)
+texture = ExtResource("1_p5emx")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=644080331]
 position = Vector2(0.3275509, 0.08189583)
