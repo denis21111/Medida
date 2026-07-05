@@ -1,10 +1,21 @@
 [gd_scene format=3 uid="uid://3iq1lt2pbv1n"]
 
-[ext_resource type="Script" uid="uid://dxfnlyxtuvsw4" path="res://scripts/level_selector_2.gd" id="1_ew38w"]
+[ext_resource type="Script" uid="uid://cq8n1jna8vsh1" path="res://scripts/level_selector_2.gd" id="1_ew38w"]
+[ext_resource type="Texture2D" uid="uid://b5na46nepj4oy" path="res://pics/Background.png" id="2_uwek5"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_riqys"]
+texture = ExtResource("2_uwek5")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xyw6"]
-bg_color = Color(0.84795177, 0.4127719, 0.770449, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sn0t7"]
+bg_color = Color(0.972549, 0, 0.16078432, 0.7058824)
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6f8o3"]
+bg_color = Color(0.20102835, 0.6932714, 0.55540425, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="Control" type="Control" unique_id=240425022]
 layout_mode = 3
@@ -13,10 +24,21 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 script = ExtResource("1_ew38w")
 
+[node name="Panel" type="Panel" parent="." unique_id=992011774]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_riqys")
+
 [node name="escape" type="Button" parent="." unique_id=620355465]
 layout_mode = 1
 offset_right = 150.0
 offset_bottom = 150.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_sn0t7")
+text = "ESC"
 
 [node name="HBoxContainer" type="VSplitContainer" parent="." unique_id=1837698690]
 layout_mode = 1
@@ -39,7 +61,11 @@ split_offset = -70
 [node name="tutorial1" type="Button" parent="HBoxContainer" unique_id=219090966]
 layout_mode = 2
 size_flags_vertical = 3
-text = "tutorial3"
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6f8o3")
+text = "Selectionsort
+Tutorial"
 
 [node name="VSplitContainer" type="VSplitContainer" parent="HBoxContainer" unique_id=598496627]
 layout_mode = 2
@@ -52,17 +78,26 @@ size_flags_vertical = 3
 [node name="Button" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer" unique_id=1243705293]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "level31"
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6f8o3")
+text = "Level 1"
 
 [node name="Button2" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer" unique_id=1824855320]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "level32"
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6f8o3")
+text = "Level 2"
 
 [node name="Button3" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer" unique_id=2054664835]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "level33"
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6f8o3")
+text = "Level 3"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VSplitContainer" unique_id=1133998157]
 layout_mode = 2
@@ -71,17 +106,25 @@ size_flags_vertical = 3
 [node name="Button" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer2" unique_id=1243418578]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_5xyw6")
-text = "level34"
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6f8o3")
+text = "Level 4"
 
 [node name="Button2" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer2" unique_id=1620678814]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "level35"
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6f8o3")
+text = "Level 5"
 
 [node name="Button3" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer2" unique_id=1659114597]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "level36"
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6f8o3")
+text = "Level 6"
 
 [connection signal="pressed" from="escape" to="." method="_on_escape_pressed"]

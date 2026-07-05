@@ -1,7 +1,35 @@
 [gd_scene format=3 uid="uid://dmwln7ebw37ab"]
 
-[ext_resource type="Script" uid="uid://ccaojd67sliv" path="res://scripts/level_selector.gd" id="1_lc76m"]
+[ext_resource type="Script" uid="uid://ikdnofah2a7y" path="res://scripts/level_selector.gd" id="1_lc76m"]
+[ext_resource type="Texture2D" uid="uid://hx4e30deqxeo" path="res://pics/master_of_package_background.png" id="2_gkmvm"]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhunq"]
+texture = ExtResource("2_gkmvm")
+
+[sub_resource type="FontVariation" id="FontVariation_tr5s6"]
+spacing_bottom = 550
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjtau"]
+bg_color = Color(0.14509805, 0.6, 0.6, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="FontVariation" id="FontVariation_rqfkl"]
+spacing_bottom = 550
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56kad"]
+bg_color = Color(0.91402054, 0.44092485, 0.3060961, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vj03c"]
+bg_color = Color(0.972549, 0, 0.16078432, 0.7058824)
+corner_radius_bottom_right = 10
 
 [node name="Control" type="Control" unique_id=240425022]
 layout_mode = 3
@@ -9,6 +37,12 @@ anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 script = ExtResource("1_lc76m")
+
+[node name="Panel" type="Panel" parent="." unique_id=829522368]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_bhunq")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="." unique_id=1614385476]
 layout_mode = 1
@@ -36,9 +70,15 @@ split_offset = -70
 [node name="tutorial1" type="Button" parent="HBoxContainer4/HBoxContainer4" unique_id=1232156991]
 layout_mode = 2
 size_flags_vertical = 3
-text = "tutorial1"
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = SubResource("FontVariation_tr5s6")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_hjtau")
+text = "BubbleSort"
 
 [node name="HBoxContainer5" type="VSplitContainer" parent="HBoxContainer4" unique_id=142645449]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
@@ -60,12 +100,22 @@ split_offset = -70
 [node name="tutorial3" type="Button" parent="HBoxContainer4/HBoxContainer2" unique_id=712590125]
 layout_mode = 2
 size_flags_vertical = 3
-text = "tutorial2"
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = SubResource("FontVariation_rqfkl")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_56kad")
+text = "SelectionSort"
 
 [node name="escape" type="Button" parent="." unique_id=620355465]
 layout_mode = 1
 offset_right = 150.0
 offset_bottom = 150.0
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_vj03c")
+text = "ESC"
 
 [connection signal="pressed" from="HBoxContainer4/HBoxContainer4/tutorial1" to="." method="_on_tutorial_1_pressed"]
 [connection signal="pressed" from="HBoxContainer4/HBoxContainer5/tutorial2" to="." method="_on_tutorial_2_pressed"]
