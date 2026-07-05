@@ -5,15 +5,15 @@ extends Control
 @onready var elixir_label = $ElixirLabel
  
 func _ready():
-	# zeigt was für rollen die spieler haben
+	await get_tree().process_frame
 	setup_roles(player_a_viewport, "revealer")
 	setup_roles(player_b_viewport, "changer")
- 
-	# speilerA paketen
-	var packages = get_packages(player_a_viewport)
-	GameManager.initialize_level_packages(packages)
- 
-	sync_weights(player_a_viewport, player_b_viewport)
+	var changer_packages = get_packages(player_b_viewport)
+	GameManager.initialize_level_packages(changer_packages)
+	GameManager.revealer_packages = get_packages(player_a_viewport)
+
+	
+	sync_weights(player_b_viewport, player_a_viewport)
  
 	# änderungen an der elixir
 	GameManager.elixir_changed.connect(_on_elixir_changed)
@@ -47,3 +47,4 @@ func _on_elixir_changed(new_amount: int):
 func _on_level_won():
 	# 
 	elixir_label.text = "Gewonnen! Das Level ist korrekt sortiert."
+	
