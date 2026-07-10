@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	$Timer.timeout.connect(_on_timer_timeout)
+	pass
 
 func _on_timer_timeout():
 	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")

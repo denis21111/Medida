@@ -2,7 +2,8 @@ extends Control
  
 @onready var player_a_viewport = $PlayerA_ViewportContainer/SubViewport
 @onready var player_b_viewport = $PlayerB_ViewportContainer/SubViewport
-@onready var elixir_label = $ElixirLabel
+@onready var elixir_label = $ElixirContainerA/ElixirLabel
+@onready var elixir_label_b = $ElixirContainerB/ElixirLabel
  
 func _ready():
 	await get_tree().process_frame
@@ -19,7 +20,8 @@ func _ready():
 	GameManager.elixir_changed.connect(_on_elixir_changed)
 	GameManager.level_won.connect(_on_level_won)
  
-	elixir_label.text = "Elixir: " + str(GameManager.current_elixir)
+	elixir_label.text = str(GameManager.current_elixir)
+	elixir_label_b.text = str(GameManager.current_elixir)
  
 func setup_roles(viewport: SubViewport, role: String):
 	var packages = get_packages(viewport)
@@ -42,9 +44,19 @@ func sync_weights(source_viewport: SubViewport, target_viewport: SubViewport):
 		target_packages[i].weight = source_packages[i].weight
  
 func _on_elixir_changed(new_amount: int):
-	elixir_label.text = "Elixir: " + str(new_amount)
+	elixir_label.text = str(new_amount)
+	elixir_label_b.text = str(new_amount)
+	
  
 func _on_level_won():
-	# 
 	elixir_label.text = "Gewonnen! Das Level ist korrekt sortiert."
+	elixir_label_b.text = "Gewonnen! Das Level ist korrekt sortiert."
 	
+
+
+func _on_button_pressed() -> void:
+	$ExitConfirmDialog.popup_centered()
+
+
+func _on_confirmation_dialog_confirmed() -> void:
+	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")

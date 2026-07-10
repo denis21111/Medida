@@ -11,18 +11,14 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_escape_pressed() -> void:
+func _on_escape_pressed():
 	#Change path to that of the MainMenu Scene
-	get_tree().change_scene_to_file("res://level_selector.tscn") # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
 
 
 func _on_tutorial_1_pressed() -> void:
-	get_tree().change_scene_to_file("res://level_subscene.tscn") # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/level_subscene.tscn") # Replace with function body.
 
 
 func _on_tutorial_2_pressed() -> void:
-	get_tree().change_scene_to_file("res://level_selector1.tscn") # Replace with function body.
-
-
-func _on_tutorial_3_pressed() -> void:
-	get_tree().change_scene_to_file("res://level_selector2.tscn")
+	get_tree().change_scene_to_file("res://scenes/level_selector2.tscn") # Replace with function body.

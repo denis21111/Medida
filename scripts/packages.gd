@@ -9,7 +9,21 @@ var player_role: String = ""
 @onready var label_node = $Label
 @onready var sprite_node = $Sprite2D
 
+const PACKAGE_COLORS = [
+	Color(0.90, 0.30, 0.30), # red
+	Color(0.95, 0.60, 0.15), # orange
+	Color(0.20, 0.75, 0.70), # teal
+	Color(0.25, 0.55, 0.95), # blue
+	Color(0.55, 0.35, 0.90), # purple
+	Color(0.90, 0.40, 0.75), # pink
+	Color(0.60, 0.60, 0.60), # gray
+	Color(0.55, 0.35, 0.20), # brown
+	Color(0.30, 0.80, 0.90), # sky blue
+]
+
+
 func _ready():
+	sprite_node.self_modulate = PACKAGE_COLORS[get_index() % PACKAGE_COLORS.size()]
 	# Beim Start ist das Paket immer verdeckt
 	label_node.text = "?"
 
