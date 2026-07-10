@@ -1,10 +1,7 @@
 [gd_scene format=3 uid="uid://dvu0gjd5skx1c"]
 
-[ext_resource type="Script" uid="uid://dkpth48k1u6lx" path="res://scripts/level_subscene.gd" id="1_aj8jn"]
-
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qca6"]
-bg_color = Color(0.44641775, 0.5989211, 0.26867285, 1)
+[ext_resource type="Script" uid="uid://8mafr40l7nix" path="res://scripts/level_subscene.gd" id="1_aj8jn"]
+[ext_resource type="Texture2D" uid="uid://busn2shcfin84" path="res://pics/Background1.png" id="2_h7amv"]
 
 [node name="Control" type="Control" unique_id=1952101760]
 layout_mode = 3
@@ -12,6 +9,15 @@ anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 script = ExtResource("1_aj8jn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=249775100]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_h7amv")
 
 [node name="HBoxContainer3" type="VSplitContainer" parent="." unique_id=2084386828]
 layout_mode = 1
@@ -34,7 +40,8 @@ split_offset = -70
 [node name="tutorial1" type="Button" parent="HBoxContainer3" unique_id=912939407]
 layout_mode = 2
 size_flags_vertical = 3
-text = "tutorial1"
+theme_override_font_sizes/font_size = 47
+text = "Bubble Sort Info"
 
 [node name="VSplitContainer" type="VSplitContainer" parent="HBoxContainer3" unique_id=701493374]
 layout_mode = 2
@@ -44,44 +51,32 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="HBoxContainer3/VSplitContainer/HBoxContainer" unique_id=569916377]
+[node name="Button1" type="Button" parent="HBoxContainer3/VSplitContainer/HBoxContainer" unique_id=569916377]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "level11"
+theme_override_font_sizes/font_size = 47
+text = "Level 1"
 
 [node name="Button2" type="Button" parent="HBoxContainer3/VSplitContainer/HBoxContainer" unique_id=1060577727]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "level12"
+theme_override_font_sizes/font_size = 47
+text = "Level 2"
 
 [node name="Button3" type="Button" parent="HBoxContainer3/VSplitContainer/HBoxContainer" unique_id=910338952]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "level13"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer3/VSplitContainer" unique_id=15136569]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Button" type="Button" parent="HBoxContainer3/VSplitContainer/HBoxContainer2" unique_id=164659478]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_0qca6")
-text = "level14"
-
-[node name="Button2" type="Button" parent="HBoxContainer3/VSplitContainer/HBoxContainer2" unique_id=278887378]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "level15"
-
-[node name="Button3" type="Button" parent="HBoxContainer3/VSplitContainer/HBoxContainer2" unique_id=972932009]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "level16"
+theme_override_font_sizes/font_size = 47
+text = "Level 3"
 
 [node name="Button" type="Button" parent="." unique_id=289647156]
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 150.0
+theme_override_font_sizes/font_size = 37
+text = "Back"
 
+[connection signal="pressed" from="HBoxContainer3/VSplitContainer/HBoxContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="HBoxContainer3/VSplitContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="HBoxContainer3/VSplitContainer/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
