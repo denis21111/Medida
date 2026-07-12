@@ -13,12 +13,11 @@ func _ready():
 	GameManager.initialize_level_packages(changer_packages)
 	GameManager.revealer_packages = get_packages(player_a_viewport)
 
-	
 	sync_weights(player_b_viewport, player_a_viewport)
  
-	# änderungen an der elixir
 	GameManager.elixir_changed.connect(_on_elixir_changed)
 	GameManager.level_won.connect(_on_level_won)
+	GameManager.algorithm_error.connect(_on_algorithm_error)
  
 	elixir_label.text = str(GameManager.current_elixir)
 	elixir_label_b.text = str(GameManager.current_elixir)
@@ -32,7 +31,7 @@ func get_packages(viewport: SubViewport) -> Array:
 	var production_line = viewport.get_node("ConveyorBelt/Background/ProductionLine")
 	var packages = []
 	for child in production_line.get_children():
-		if child.has_method("reveal_value"):  # checks it's a package
+		if child.has_method("reveal_value"):
 			packages.append(child)
 	return packages
  
@@ -46,17 +45,23 @@ func sync_weights(source_viewport: SubViewport, target_viewport: SubViewport):
 func _on_elixir_changed(new_amount: int):
 	elixir_label.text = str(new_amount)
 	elixir_label_b.text = str(new_amount)
+	elixir_label.modulate = Color(1, 1, 1)
+	elixir_label_b.modulate = Color(1, 1, 1)
 	
- 
 func _on_level_won():
-	elixir_label.text = "Gewonnen! Das Level ist korrekt sortiert."
-	elixir_label_b.text = "Gewonnen! Das Level ist korrekt sortiert."
-	
+	elixir_label.text = "Gewonnen!"
+	elixir_label_b.text = "Gewonnen!"
+	await get_tree().create_timer(1.5).timeout
+	get_tree().change_scene_to_file("res://scenes/VictoryScreen.tscn")
 
+func _on_algorithm_error():
+	elixir_label.text = "Falscher Schritt!"
+	elixir_label_b.text = "Falscher Schritt!"
+	elixir_label.modulate = Color(1, 0, 0)
+	elixir_label_b.modulate = Color(1, 0, 0)
 
 func _on_button_pressed() -> void:
 	$ExitConfirmDialog.popup_centered()
-
 
 func _on_confirmation_dialog_confirmed() -> void:
 	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")

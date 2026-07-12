@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bt04eesxcb4h8"]
+
+[ext_resource type="Script" uid="uid://c373ovgpobjtv" path="res://scripts/lose_screen.gd" id="1_x3j6d"]
+[ext_resource type="Texture2D" uid="uid://b5na46nepj4oy" path="res://pics/Background.png" id="2_aeugc"]
+
+[node name="LoseScreen" type="Control" unique_id=1759708702]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x3j6d")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=721294272]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_aeugc")
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1228762089]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=2145206065]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="ElixirUsedLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1342773775]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Try again?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Retry" type="Button" parent="CenterContainer/VBoxContainer" unique_id=888232673]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Retry"
+
+[node name="LevelSelection" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1190246485]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Level Selection"
+
+[node name="Main Menu" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2075987938]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Main Menu
+"
+
+[node name="Defeat" type="Label" parent="." unique_id=754436605]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -180.5
+offset_right = 180.5
+offset_bottom = 137.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8901961, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "DEFEAT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/LevelSelection" to="." method="_on_level_selection_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
