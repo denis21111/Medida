@@ -1,42 +1,31 @@
 [gd_scene format=3 uid="uid://5m113wve8vyl"]
 
-[ext_resource type="Script" uid="uid://cpg5unsoxmdc1" path="res://scripts/GameManager.gd" id="1_yqjtg"]
+[ext_resource type="Script" uid="uid://b0lfmoc6e4xwq" path="res://scripts/game.gd" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://c53bbt3wjua7d" path="res://scenes/conveyor_belt.tscn" id="2_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://bdkcy0vggr8xl" path="res://pics/Elixier.png" id="3_lnu2h"]
 
 [node name="Game" type="Control" unique_id=665196175]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_yqjtg")
 
-[node name="ElixirLabel" type="Label" parent="." unique_id=1900011313]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -32.5
-offset_top = -11.5
-offset_right = 32.5
-offset_bottom = 18.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Elixir: 10"
-
 [node name="PlayerA_ViewportContainer" type="SubViewportContainer" parent="." unique_id=1665941191]
 layout_mode = 1
 anchors_preset = -1
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.5
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="PlayerA_ViewportContainer" unique_id=1041981751]
 handle_input_locally = false
+physics_object_picking = true
 size = Vector2i(1920, 540)
 render_target_update_mode = 4
 
@@ -45,9 +34,8 @@ render_target_update_mode = 4
 [node name="PlayerB_ViewportContainer" type="SubViewportContainer" parent="." unique_id=1624425786]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 3.1415927
@@ -56,7 +44,80 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="PlayerB_ViewportContainer" unique_id=1593496129]
 handle_input_locally = false
+physics_object_picking = true
 size = Vector2i(1920, 540)
 render_target_update_mode = 4
 
 [node name="ConveyorBelt" parent="PlayerB_ViewportContainer/SubViewport" unique_id=1143404914 instance=ExtResource("2_lnu2h")]
+
+[node name="ElixirContainerA" type="HBoxContainer" parent="." unique_id=1171147892]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -110.0
+offset_right = 140.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ElixirIcon" type="TextureRect" parent="ElixirContainerA" unique_id=1643428676]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+texture = ExtResource("3_lnu2h")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ElixirLabel" type="Label" parent="ElixirContainerA" unique_id=1900011313]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[node name="ElixirContainerB" type="HBoxContainer" parent="." unique_id=2119397547]
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 40.0
+offset_top = 100.0
+offset_right = 320.0
+offset_bottom = 200.0
+grow_horizontal = 2
+rotation = 3.1415927
+
+[node name="ElixirIcon" type="TextureRect" parent="ElixirContainerB" unique_id=264809831]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_lnu2h")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ElixirLabel" type="Label" parent="ElixirContainerB" unique_id=1471444837]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 30
+text = "10"
+
+[node name="Button" type="Button" parent="." unique_id=1564984024]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -25.0
+offset_right = 62.0
+offset_bottom = 25.0
+grow_vertical = 2
+rotation = 4.712389
+theme_override_font_sizes/font_size = 47
+text = "Exit"
+
+[node name="ExitConfirmDialog" type="ConfirmationDialog" parent="." unique_id=1404154921]
+dialog_text = "Return to main menu?"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="confirmed" from="ExitConfirmDialog" to="." method="_on_confirmation_dialog_confirmed"]

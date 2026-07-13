@@ -119,5 +119,4 @@ text = "ESC"
 
 [connection signal="pressed" from="HBoxContainer4/HBoxContainer4/tutorial1" to="." method="_on_tutorial_1_pressed"]
 [connection signal="pressed" from="HBoxContainer4/HBoxContainer5/tutorial2" to="." method="_on_tutorial_2_pressed"]
-[connection signal="pressed" from="HBoxContainer4/HBoxContainer2/tutorial3" to="." method="_on_tutorial_3_pressed"]
 [connection signal="pressed" from="escape" to="." method="_on_escape_pressed"]

@@ -1,16 +1,15 @@
 [gd_scene format=3 uid="uid://dl05cfb8afgbn"]
 
-[ext_resource type="Texture2D" uid="uid://b5na46nepj4oy" path="res://pics/Background.png" id="1_rryb6"]
-[ext_resource type="Texture2D" uid="uid://bfdfbn328nrqk" path="res://pics/ProductionLine.png" id="2_l3v0t"]
-[ext_resource type="PackedScene" uid="uid://dl05cfb8afgbn" path="res://scenes/packages.tscn" id="3_haxd3"]
+[ext_resource type="Script" uid="uid://dfwrvrveu0jm3" path="res://scripts/packages.gd" id="1_7n7sm"]
+[ext_resource type="Texture2D" uid="uid://btswnc7l7ood8" path="res://pics/Package.png" id="1_p5emx"]
 
-[node name="ConveyorBelt" type="Node2D" unique_id=494027328]
+[node name="Packages" type="Area2D" unique_id=31122542]
+script = ExtResource("1_7n7sm")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1184242374]
-zoom = Vector2(0.5, 0.5)
-
-[node name="Background" type="Sprite2D" parent="." unique_id=1755220566]
-texture = ExtResource("1_rryb6")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1703066972]
+position = Vector2(49, 44)
+scale = Vector2(0.12565199, 0.1921305)
+texture = ExtResource("1_p5emx")
 
 [node name="ProductionLine" type="Sprite2D" parent="Background" unique_id=431608756]
 texture = ExtResource("2_l3v0t")

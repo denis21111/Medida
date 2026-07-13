@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://byjtconee82tn"]
+
+[ext_resource type="Script" uid="uid://de5chgcijbx4f" path="res://scripts/victory_screen.gd" id="1_86fr6"]
+[ext_resource type="FontFile" uid="uid://c6cat286y8v8n" path="res://Fonts/Fredoka-Bold.ttf" id="2_70mwv"]
+[ext_resource type="Texture2D" uid="uid://dw3uej6ds225g" path="res://pics/Victory_Screen.png" id="2_86fr6"]
+
+[node name="VictoryScreen" type="Control" unique_id=234733838]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_86fr6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=37939731]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_86fr6")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=881589899]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -962.0
+offset_right = 939.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=347918459]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="ElixirUsedLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1658920592]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_70mwv")
+theme_override_font_sizes/font_size = 100
+text = "Elixir used:
+"
+horizontal_alignment = 1
+
+[node name="Retry" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2122690986]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_70mwv")
+theme_override_font_sizes/font_size = 100
+text = "Retry"
+
+[node name="LevelSelection" type="Button" parent="CenterContainer/VBoxContainer" unique_id=692201533]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_70mwv")
+theme_override_font_sizes/font_size = 100
+text = "Level Selection"
+
+[node name="MainMenu" type="Button" parent="CenterContainer/VBoxContainer" unique_id=219001180]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_70mwv")
+theme_override_font_sizes/font_size = 100
+text = "Main Menu"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/LevelSelection" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

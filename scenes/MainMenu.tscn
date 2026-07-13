@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byo6hc723veff"]
 
 [ext_resource type="Script" uid="uid://bwdowlymrim5q" path="res://scripts/MainMenu.gd" id="1_2wh52"]
-[ext_resource type="Texture2D" uid="uid://hx4e30deqxeo" path="res://pics/master_of_package_background.png" id="2_ow34m"]
+[ext_resource type="Texture2D" uid="uid://busn2shcfin84" path="res://pics/Background1.png" id="2_2wh52"]
 [ext_resource type="Texture2D" uid="uid://cu03su4j2rvn7" path="res://pics/Master of packages (1).svg" id="3_l72w3"]
 
 [node name="MainMenu" type="Control" unique_id=479026019]
@@ -20,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ow34m")
+texture = ExtResource("2_2wh52")
 expand_mode = 2
 
 [node name="MOPLogo" type="TextureRect" parent="." unique_id=142895234]
@@ -48,9 +48,9 @@ anchor_top = 0.5
 anchor_right = 0.51600003
 anchor_bottom = 0.5
 offset_left = -124.72009
-offset_top = -101.0
+offset_top = -237.0
 offset_right = 175.2799
-offset_bottom = 199.0
+offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -60,10 +60,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Play"
 
-[node name="Settings" type="Button" parent="VBoxContainer" unique_id=549564526]
+[node name="Tutorial" type="Button" parent="VBoxContainer" unique_id=893913602]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Setting"
+text = "Tutorial
+"
 
 [node name="Quit" type="Button" parent="VBoxContainer" unique_id=1280791117]
 layout_mode = 2
@@ -71,5 +72,5 @@ theme_override_font_sizes/font_size = 40
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

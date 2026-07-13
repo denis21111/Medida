@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cmfkykgsafbt2" path="res://pics/Tutorial.png" id="1_jl26d"]
 [ext_resource type="FontFile" uid="uid://c6cat286y8v8n" path="res://Fonts/Fredoka-Bold.ttf" id="2_5s8la"]
+[ext_resource type="Script" uid="uid://c7sxegcy4tsd4" path="res://button.gd" id="3_fr6qw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fr6qw"]
 bg_color = Color(0.5080581, 0.7237766, 0.61262757, 1)
@@ -29,3 +30,6 @@ theme_override_fonts/font = ExtResource("2_5s8la")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_fr6qw")
 text = "Los Geht`s!"
+script = ExtResource("3_fr6qw")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
