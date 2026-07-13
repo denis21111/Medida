@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cus1a2k73q1dm"]
+
+[ext_resource type="Texture2D" uid="uid://dxncc2xhb6gno" path="res://pics/TutorialBubbleSort.png" id="1_e3dxx"]
+[ext_resource type="FontFile" uid="uid://c6cat286y8v8n" path="res://Fonts/Fredoka-Bold.ttf" id="2_odrh7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81xty"]
+bg_color = Color(0.5080581, 0.7237766, 0.61262757, 1)
+border_width_left = 10
+border_width_right = 10
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="Node2D" type="Node2D" unique_id=1001098354]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=970188372]
+position = Vector2(962.49994, 522.99994)
+scale = Vector2(1.1429425, 1.0967056)
+texture = ExtResource("1_e3dxx")
+
+[node name="Button" type="Button" parent="." unique_id=1289480173]
+offset_left = 864.0
+offset_top = 975.0
+offset_right = 1046.0
+offset_bottom = 1030.0
+theme_override_colors/font_color = Color(0.8980392, 0.22352941, 0.20784314, 1)
+theme_override_fonts/font = ExtResource("2_odrh7")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_81xty")
+text = "Weiter"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
