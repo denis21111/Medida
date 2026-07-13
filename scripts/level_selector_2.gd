@@ -41,3 +41,7 @@ func _on_button_3_pressed() -> void:
 	GameManager.current_elixir = 22
 	GameManager.feste_start_reihenfolge = [9, 8, 7, 6, 1, 2, 3, 4, 5]
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
+
+
+func _on_tutorial_1_pressed() -> void:
+	get_tree().change_scene_to_file("res://TutorialSelectionSort.tscn")
