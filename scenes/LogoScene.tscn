@@ -1,40 +1,43 @@
 [gd_scene format=3 uid="uid://rw7u3ub4g03j"]
 
-[ext_resource type="Script" uid="uid://blf7h5hdw5i2" path="res://scripts/LogoScene.gd" id="1_1pqiq"]
-[ext_resource type="Texture2D" uid="uid://ihj3wwqtbby" path="res://pics/Studio.png" id="2_yo7u4"]
+[ext_resource type="Texture2D" uid="uid://b5na46nepj4oy" path="res://pics/Background.png" id="1_yo7u4"]
+[ext_resource type="Texture2D" uid="uid://bfdfbn328nrqk" path="res://pics/ProductionLine.png" id="2_jkdsn"]
+[ext_resource type="PackedScene" uid="uid://dl05cfb8afgbn" path="res://scenes/packages.tscn" id="3_da27j"]
 
-[node name="LogoScene" type="Control" unique_id=811574768]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_1pqiq")
+[node name="ConveyorBelt" type="Node2D" unique_id=494027328]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1493733804]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.007843138, 0.15686275, 0.3529412, 1)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1184242374]
+zoom = Vector2(0.5, 0.5)
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=644373851]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_yo7u4")
-expand_mode = 3
-stretch_mode = 5
+[node name="Background" type="Sprite2D" parent="." unique_id=1755220566]
+texture = ExtResource("1_yo7u4")
 
-[node name="Timer" type="Timer" parent="." unique_id=499008144]
-wait_time = 2.0
-one_shot = true
-autostart = true
+[node name="ProductionLine" type="Sprite2D" parent="Background" unique_id=431608756]
+texture = ExtResource("2_jkdsn")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Package1" parent="Background/ProductionLine" unique_id=31122542 instance=ExtResource("3_da27j")]
+position = Vector2(-597, -149)
+
+[node name="Package2" parent="Background/ProductionLine" unique_id=1513405175 instance=ExtResource("3_da27j")]
+position = Vector2(-473, -147)
+
+[node name="Package3" parent="Background/ProductionLine" unique_id=1789498924 instance=ExtResource("3_da27j")]
+position = Vector2(-351, -146)
+
+[node name="Package4" parent="Background/ProductionLine" unique_id=533621066 instance=ExtResource("3_da27j")]
+position = Vector2(-222, -145)
+
+[node name="Package5" parent="Background/ProductionLine" unique_id=1521713691 instance=ExtResource("3_da27j")]
+position = Vector2(-90, -144)
+
+[node name="Package6" parent="Background/ProductionLine" unique_id=609468789 instance=ExtResource("3_da27j")]
+position = Vector2(39, -147)
+
+[node name="Package7" parent="Background/ProductionLine" unique_id=374708810 instance=ExtResource("3_da27j")]
+position = Vector2(182, -149)
+
+[node name="Package8" parent="Background/ProductionLine" unique_id=284889730 instance=ExtResource("3_da27j")]
+position = Vector2(323, -144)
+
+[node name="Package9" parent="Background/ProductionLine" unique_id=1819240028 instance=ExtResource("3_da27j")]
+position = Vector2(466, -147)
