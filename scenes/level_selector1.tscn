@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bg7lk6n2oe6w5"]
 
-[ext_resource type="Script" uid="uid://t5huw4cbkqlt" path="res://scripts/level_selector_1.gd" id="1_73f1l"]
+[ext_resource type="Script" uid="uid://8mafr40l7nix" path="res://scripts/level_subscene.gd" id="1_yptlx"]
 [ext_resource type="Texture2D" uid="uid://b5na46nepj4oy" path="res://pics/Background.png" id="2_yptlx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhunq"]
@@ -25,7 +25,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-script = ExtResource("1_73f1l")
+script = ExtResource("1_yptlx")
 
 [node name="Panel" type="Panel" parent="." unique_id=1027998064]
 layout_mode = 0
@@ -107,6 +107,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_riqys")
 text = "Level 3"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer2/VSplitContainer" unique_id=1840775821]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -138,3 +139,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_riqys")
 text = "Level 6"
 
 [connection signal="pressed" from="escape" to="." method="_on_escape_pressed"]
+[connection signal="pressed" from="HBoxContainer2/tutorial1" to="." method="_on_tutorial_1_pressed"]
+[connection signal="pressed" from="HBoxContainer2/VSplitContainer/HBoxContainer/Button" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="HBoxContainer2/VSplitContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="HBoxContainer2/VSplitContainer/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]

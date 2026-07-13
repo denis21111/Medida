@@ -17,7 +17,7 @@ func _on_escape_pressed():
 
 
 func _on_tutorial_1_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/level_subscene.tscn") # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/level_selector1.tscn") # Replace with function body.
 
 
 func _on_tutorial_2_pressed() -> void:
