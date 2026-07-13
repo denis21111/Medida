@@ -11,32 +11,16 @@ position = Vector2(49, 44)
 scale = Vector2(0.12565199, 0.1921305)
 texture = ExtResource("1_p5emx")
 
-[node name="ProductionLine" type="Sprite2D" parent="Background" unique_id=431608756]
-texture = ExtResource("2_l3v0t")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=644080331]
+position = Vector2(0.3275509, 0.08189583)
+scale = Vector2(0.9974489, 0.99935573)
+polygon = PackedVector2Array(54, 1, 1, 19, 1, 76, 47, 98, 99, 78, 99, 21)
 
-[node name="Package1" parent="Background/ProductionLine" unique_id=31122542 instance=ExtResource("3_haxd3")]
-position = Vector2(-597, -149)
+[node name="Label" type="Label" parent="." unique_id=1504593076]
+offset_left = 45.0
+offset_top = 46.0
+offset_right = 85.0
+offset_bottom = 69.0
+text = "?"
 
-[node name="Package2" parent="Background/ProductionLine" unique_id=1513405175 instance=ExtResource("3_haxd3")]
-position = Vector2(-473, -147)
-
-[node name="Package3" parent="Background/ProductionLine" unique_id=1789498924 instance=ExtResource("3_haxd3")]
-position = Vector2(-351, -146)
-
-[node name="Package4" parent="Background/ProductionLine" unique_id=533621066 instance=ExtResource("3_haxd3")]
-position = Vector2(-222, -145)
-
-[node name="Package5" parent="Background/ProductionLine" unique_id=1521713691 instance=ExtResource("3_haxd3")]
-position = Vector2(-90, -144)
-
-[node name="Package6" parent="Background/ProductionLine" unique_id=609468789 instance=ExtResource("3_haxd3")]
-position = Vector2(39, -147)
-
-[node name="Package7" parent="Background/ProductionLine" unique_id=374708810 instance=ExtResource("3_haxd3")]
-position = Vector2(182, -149)
-
-[node name="Package8" parent="Background/ProductionLine" unique_id=284889730 instance=ExtResource("3_haxd3")]
-position = Vector2(323, -144)
-
-[node name="Package9" parent="Background/ProductionLine" unique_id=1819240028 instance=ExtResource("3_haxd3")]
-position = Vector2(466, -147)
+[connection signal="input_event" from="." to="." method="_on_input_event"]
