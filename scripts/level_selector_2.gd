@@ -22,8 +22,8 @@ func _on_button_2_pressed() -> void:
 func _on_button_3_pressed() -> void:
 	GameManager.aktiver_algorithmus = "SELECTION_SORT"
 	GameManager.pakete_anzahl = 9
-	GameManager.start_elixir = 22 
-	GameManager.current_elixir = 22
+	GameManager.start_elixir = 23 
+	GameManager.current_elixir = 23
 	GameManager.feste_start_reihenfolge = [9, 8, 7, 6, 1, 2, 3, 4, 5]
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
