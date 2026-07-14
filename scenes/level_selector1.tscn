@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bg7lk6n2oe6w5"]
 
-[ext_resource type="Script" uid="uid://8mafr40l7nix" path="res://scripts/level_subscene.gd" id="1_yptlx"]
+[ext_resource type="Script" uid="uid://t5huw4cbkqlt" path="res://scripts/level_selector_1.gd" id="1_yptlx"]
 [ext_resource type="Texture2D" uid="uid://b5na46nepj4oy" path="res://pics/Background.png" id="2_yptlx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhunq"]
@@ -43,7 +43,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_tr5s6")
 text = "ESC"
 
-[node name="HBoxContainer2" type="VSplitContainer" parent="." unique_id=584719221]
+[node name="HBoxContainer" type="VSplitContainer" parent="." unique_id=584719221]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -61,7 +61,7 @@ theme_override_constants/separation = 0
 split_offsets = PackedInt32Array(-70)
 split_offset = -70
 
-[node name="tutorial1" type="Button" parent="HBoxContainer2" unique_id=712590125]
+[node name="tutorial1" type="Button" parent="HBoxContainer" unique_id=712590125]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -71,15 +71,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_riqys")
 text = "BubbleSort
 Tutorial"
 
-[node name="VSplitContainer" type="VSplitContainer" parent="HBoxContainer2" unique_id=1505239516]
+[node name="VSplitContainer" type="VSplitContainer" parent="HBoxContainer" unique_id=1505239516]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer2/VSplitContainer" unique_id=176199754]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VSplitContainer" unique_id=176199754]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="HBoxContainer2/VSplitContainer/HBoxContainer" unique_id=1465993010]
+[node name="Button" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer" unique_id=1465993010]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -88,7 +88,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_riqys")
 text = "Level 1"
 
-[node name="Button2" type="Button" parent="HBoxContainer2/VSplitContainer/HBoxContainer" unique_id=106424600]
+[node name="Button2" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer" unique_id=106424600]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -97,7 +97,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_riqys")
 text = "Level 2"
 
-[node name="Button3" type="Button" parent="HBoxContainer2/VSplitContainer/HBoxContainer" unique_id=461157872]
+[node name="Button3" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer" unique_id=461157872]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -106,12 +106,12 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_riqys")
 text = "Level 3"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer2/VSplitContainer" unique_id=1840775821]
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/VSplitContainer" unique_id=1840775821]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="HBoxContainer2/VSplitContainer/HBoxContainer2" unique_id=1068385449]
+[node name="Button" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer2" unique_id=1068385449]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -120,7 +120,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_riqys")
 text = "Level 4"
 
-[node name="Button2" type="Button" parent="HBoxContainer2/VSplitContainer/HBoxContainer2" unique_id=2123413445]
+[node name="Button2" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer2" unique_id=2123413445]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -129,7 +129,7 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_riqys")
 text = "Level 5"
 
-[node name="Button3" type="Button" parent="HBoxContainer2/VSplitContainer/HBoxContainer2" unique_id=920210490]
+[node name="Button3" type="Button" parent="HBoxContainer/VSplitContainer/HBoxContainer2" unique_id=920210490]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
@@ -139,7 +139,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_riqys")
 text = "Level 6"
 
 [connection signal="pressed" from="escape" to="." method="_on_escape_pressed"]
-[connection signal="pressed" from="HBoxContainer2/tutorial1" to="." method="_on_tutorial_1_pressed"]
-[connection signal="pressed" from="HBoxContainer2/VSplitContainer/HBoxContainer/Button" to="." method="_on_button_1_pressed"]
-[connection signal="pressed" from="HBoxContainer2/VSplitContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="HBoxContainer2/VSplitContainer/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/tutorial1" to="." method="_on_tutorial_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/VSplitContainer/HBoxContainer/Button" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/VSplitContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/VSplitContainer/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]

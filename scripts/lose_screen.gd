@@ -6,7 +6,6 @@ func _ready() -> void:
 
 
 func _on_retry_pressed() -> void:
-	# Setzt das Elixier zurück auf den Startwert des gerade gespielten Levels
 	GameManager.current_elixir = GameManager.start_elixir
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
 

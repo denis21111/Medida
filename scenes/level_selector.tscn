@@ -86,6 +86,7 @@ split_offsets = PackedInt32Array(-70)
 split_offset = -70
 
 [node name="tutorial2" type="Button" parent="HBoxContainer4/HBoxContainer5" unique_id=1798852995]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 text = "tutorial1"
@@ -119,4 +120,5 @@ text = "ESC"
 
 [connection signal="pressed" from="HBoxContainer4/HBoxContainer4/tutorial1" to="." method="_on_tutorial_1_pressed"]
 [connection signal="pressed" from="HBoxContainer4/HBoxContainer5/tutorial2" to="." method="_on_tutorial_2_pressed"]
+[connection signal="pressed" from="HBoxContainer4/HBoxContainer2/tutorial3" to="." method="_on_tutorial_3_pressed"]
 [connection signal="pressed" from="escape" to="." method="_on_escape_pressed"]

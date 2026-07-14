@@ -22,3 +22,7 @@ func _on_tutorial_1_pressed() -> void:
 
 func _on_tutorial_2_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/level_selector2.tscn") # Replace with function body.
+
+
+func _on_tutorial_3_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/level_selector2.tscn") # Replace with function body.

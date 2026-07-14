@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bt04eesxcb4h8"]
 
 [ext_resource type="Script" uid="uid://c373ovgpobjtv" path="res://scripts/lose_screen.gd" id="1_x3j6d"]
-[ext_resource type="Texture2D" uid="uid://b5na46nepj4oy" path="res://pics/Background.png" id="2_aeugc"]
+[ext_resource type="Texture2D" uid="uid://t30ilnoouint" path="res://pics/defeat.png" id="2_x3j6d"]
 
 [node name="LoseScreen" type="Control" unique_id=1759708702]
 layout_mode = 3
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_aeugc")
+texture = ExtResource("2_x3j6d")
 metadata/_edit_use_anchors_ = true
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1228762089]
@@ -35,6 +35,7 @@ layout_mode = 2
 theme_override_constants/separation = 30
 
 [node name="ElixirUsedLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1342773775]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "Try again?"
@@ -58,6 +59,7 @@ text = "Main Menu
 "
 
 [node name="Defeat" type="Label" parent="." unique_id=754436605]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

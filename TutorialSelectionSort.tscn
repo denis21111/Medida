@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dkexuc4ysfgsk"]
 
+[ext_resource type="Script" uid="uid://bsihp021mfkwr" path="res://tutorial_selection_sort.gd" id="1_3hhqp"]
 [ext_resource type="Texture2D" uid="uid://xhlhgggiapo1" path="res://pics/TutorialSelectionSort.png" id="1_pnipr"]
 [ext_resource type="FontFile" uid="uid://c6cat286y8v8n" path="res://Fonts/Fredoka-Bold.ttf" id="2_3hhqp"]
 
@@ -13,6 +14,7 @@ corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
 [node name="Node2D" type="Node2D" unique_id=2047545074]
+script = ExtResource("1_3hhqp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=13421635]
 position = Vector2(955.25, 521.74994)
@@ -28,6 +30,6 @@ theme_override_colors/font_color = Color(0.8980392, 0.22352941, 0.20784314, 1)
 theme_override_fonts/font = ExtResource("2_3hhqp")
 theme_override_font_sizes/font_size = 45
 theme_override_styles/normal = SubResource("StyleBoxFlat_qvc7f")
-text = "Weiter"
+text = "Zurück"
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_pressed"]

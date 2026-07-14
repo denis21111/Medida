@@ -21,8 +21,10 @@ var korrekte_tausch_reihenfolge: Array = []
 var aktueller_pruef_schritt: int = 0
 
 func initialize_level_packages(packages_in_level: Array):
-	current_elixir = start_elixir
+	aktueller_pruef_schritt = 0
+	korrekte_tausch_reihenfolge.clear()
 	
+	current_elixir = start_elixir
 	active_packages = packages_in_level
 	var m = active_packages.size()
 	
@@ -39,11 +41,11 @@ func initialize_level_packages(packages_in_level: Array):
 		
 	if aktiver_algorithmus == "SELECTION_SORT":
 		generiere_selection_sort_loesung()
+	elif aktiver_algorithmus == "BUBBLE_SORT":
+		generiere_bubble_sort_loesung()
 
 func generiere_selection_sort_loesung():
 	korrekte_tausch_reihenfolge.clear()
-	aktueller_pruef_schritt = 0
-	
 	var temp_weights = []
 	for pkg in active_packages:
 		temp_weights.append(pkg.weight)
@@ -60,6 +62,21 @@ func generiere_selection_sort_loesung():
 			var temp = temp_weights[i]
 			temp_weights[i] = temp_weights[min_index]
 			temp_weights[min_index] = temp
+
+func generiere_bubble_sort_loesung():
+	korrekte_tausch_reihenfolge.clear()
+	var temp_weights = []
+	for pkg in active_packages:
+		temp_weights.append(pkg.weight)
+		
+	var n = temp_weights.size()
+	for i in range(n):
+		for j in range(0, n - 1):
+			if temp_weights[j] > temp_weights[j + 1]:
+				korrekte_tausch_reihenfolge.append([j, j + 1])
+				var temp = temp_weights[j]
+				temp_weights[j] = temp_weights[j + 1]
+				temp_weights[j + 1] = temp
 
 func swap_packages(index1: int, index2: int):
 	var m = active_packages.size()
@@ -88,7 +105,7 @@ func swap_packages_by_node(pkg1, pkg2) -> bool:
 	if idx1 < 0 or idx2 < 0:
 		return false
 		
-	if aktiver_algorithmus == "SELECTION_SORT" and korrekte_tausch_reihenfolge.size() > 0:
+	if (aktiver_algorithmus == "SELECTION_SORT" or aktiver_algorithmus == "BUBBLE_SORT") and korrekte_tausch_reihenfolge.size() > 0:
 		if aktueller_pruef_schritt < korrekte_tausch_reihenfolge.size():
 			var erwarteter_tausch = korrekte_tausch_reihenfolge[aktueller_pruef_schritt]
 			var spieler_tausch = [min(idx1, idx2), max(idx1, idx2)]

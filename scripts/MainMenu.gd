@@ -9,4 +9,4 @@ func _on_quit_pressed():
 
 
 func _on_tutorial_pressed() -> void:
-	get_tree().change_scene_to_file("res://Tutorial.tscn")
+	get_tree().change_scene_to_file("res://scenes/Tutorial.tscn")
