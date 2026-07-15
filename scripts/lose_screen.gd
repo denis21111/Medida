@@ -15,4 +15,7 @@ func _on_main_menu_pressed() -> void:
 
 
 func _on_level_selection_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/level_selector2.tscn")
+	if GameManager.aktiver_algorithmus == "SELECTION_SORT":
+		get_tree().change_scene_to_file("res://scenes/level_selector2.tscn")
+	elif GameManager.aktiver_algorithmus == "BUBBLE_SORT":
+		get_tree().change_scene_to_file("res://scenes/level_selector1.tscn")
